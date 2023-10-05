@@ -13,30 +13,59 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <stddef.h>
 
 #define BUFFER_SIZE 128
 #define PATH_MAX 4096
 
+#ifndef PATH_LIST
+#define PATH_LIST
+/**
+ * struct path_list - path linked list
+ * @path: cmd path
+ * @next: points to the next node
+ *
+ * Description: linked list node structure
+ */
+typedef struct path_list
+{
+	char *path;
+	struct path_list *next;
+} p_ll;
+#endif
+
+/** shell.c functions*/
+void exec_shell(char **_argv, char **env, char **lineptr);
+void run_cmd(char **_argv, char **envp);
+/** end shell.c functions*/
+
 /** builtin functions */
 char **_create_cmd_table(char *str, char *delim);
 int _count_tokens(char *str, char *delim);
+char *get_cmd_path(char *cmd, char **env, int *flag);
 /** end builtin functions */
 
 /** env functions */
 char **_create_env_table(char **envp);
-char *_getenv(const char *name);
+char *_getenv(char *name, char **env);
 int _setenv(char ***env, const char *name, const char *value);
 void _modify_env(char **argv, char **envp);
+void _printenv(char **env);
 /** end env functions */
 
 /** strings functions */
 char *_strdup(char *str);
 char *_strtok(char *str, char *delim);
-int _strncmp(char *s1, char *s2, int n)
-int _strcmp(char *s1, char *s2)
+int _strncmp(char *s1, char *s2, char n);
+int _strcmp(char *s1, char *s2);
+size_t _strlen(const char *str);
+char *_strcat(char *dest, char *src);
+char *_rm_newline_char(char *s);
+int _atoi(char *s);
 /** end strings functions*/
 
 /** memory allocation functions */
 void free_array(char **arr);
+void _free_linked_list(p_ll *head);
 /**end memory allocation functions */
 #endif
