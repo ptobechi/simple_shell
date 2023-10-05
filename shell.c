@@ -14,7 +14,7 @@ int main(int argc, char **argv, char **envp)
 	size_t n = 0;
 	ssize_t vread;
 	/** creates an environment table for the shell procees*/
-	char **env = _create_env_table(envp);
+	char **env = envp;
 	(void)argv;
 
 	if (argc > 1)
@@ -25,7 +25,7 @@ int main(int argc, char **argv, char **envp)
 	{
 		if (isatty(STDIN_FILENO))
 		{
-			write(STDOUT_FILENO, "ghst$ ", 4);
+			write(STDOUT_FILENO, "ghst$ ", 6);
 			fflush(stdout);
 		}
 
@@ -42,7 +42,6 @@ int main(int argc, char **argv, char **envp)
 	}
 
 	free(lineptr);
-	free_array(env);
 
 	return (0);
 }
@@ -95,18 +94,18 @@ void run_cmd(char **_argv, char **env)
 	char *cmd_path;
 
 	/** get command location*/
-	cmd_path = get_cmd_path(_argv[0], env, &handle_flag);
+	cmd_path = get_cmd_path(_argv[0], &handle_flag);
 	/**if (_argv[1] != NULL)
-	{
-		_env = _check_for_path(_argv[1], '$');
+	  {
+	  _env = _check_for_path(_argv[1], '$');
 
-		if (_env != NULL)
-		{
-			env_path = _getenv(_env);
-			if (env_path != NULL)
-				write(STDOUT_FILENO, env_path, _strlen(env_path));
-		}
-	}*/
+	  if (_env != NULL)
+	  {
+	  env_path = _getenv(_env);
+	  if (env_path != NULL)
+	  write(STDOUT_FILENO, env_path, _strlen(env_path));
+	  }
+	  }*/
 
 	if (cmd_path == NULL)
 	{
@@ -127,7 +126,6 @@ void run_cmd(char **_argv, char **env)
 		if (handle_flag)
 			free(cmd_path);
 	}
-	free_array(env);
 
 	/* parent process*/
 	waitpid(child_p, &status, 0);

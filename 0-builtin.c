@@ -35,13 +35,13 @@ p_ll *append_node(p_ll *head, char *path)
  *
  * Return: void
  */
-p_ll *create_path_ll(char **env)
+p_ll *create_path_ll(void)
 {
 	p_ll *head = NULL;
 	char *name = "PATH", *val, **tokens, *delim = ":";
 	int i;
 
-	val = _getenv(name, env);
+	val = _getenv(name);
 
 	if (val == NULL)
 		return (NULL);
@@ -86,7 +86,7 @@ int find_file(char *file_path)
  *
  * Return: location pointer
  */
-char *get_cmd_path(char *cmd, char **env, int *flag)
+char *get_cmd_path(char *cmd, int *flag)
 {
 	char *cmd_full_path, *cmd_parent_path;
 	p_ll *head = NULL, *temp;
@@ -100,7 +100,7 @@ char *get_cmd_path(char *cmd, char **env, int *flag)
 		return (cmd);
 
 	/** create linked list from env var PATH **/
-	head = create_path_ll(env);
+	head = create_path_ll();
 	if (head == NULL)
 		return (NULL);
 

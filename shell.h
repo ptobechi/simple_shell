@@ -18,6 +18,8 @@
 #define BUFFER_SIZE 128
 #define PATH_MAX 4096
 
+extern char **environ;
+
 #ifndef PATH_LIST
 #define PATH_LIST
 /**
@@ -42,12 +44,12 @@ void run_cmd(char **_argv, char **envp);
 /** builtin functions */
 char **_create_cmd_table(char *str, char *delim);
 int _count_tokens(char *str, char *delim);
-char *get_cmd_path(char *cmd, char **env, int *flag);
+char *get_cmd_path(char *cmd, int *flag);
 /** end builtin functions */
 
 /** env functions */
 char **_create_env_table(char **envp);
-char *_getenv(char *name, char **env);
+char *_getenv(char *name);
 int _setenv(char ***env, const char *name, const char *value);
 void _modify_env(char **argv, char **envp);
 void _printenv(char **env);
@@ -62,6 +64,7 @@ size_t _strlen(const char *str);
 char *_strcat(char *dest, char *src);
 char *_rm_newline_char(char *s);
 int _atoi(char *s);
+void _trim(char **str);
 /** end strings functions*/
 
 /** memory allocation functions */
