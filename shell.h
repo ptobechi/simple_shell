@@ -65,6 +65,7 @@ char *_strcat(char *dest, char *src);
 char *_rm_newline_char(char *s);
 int _atoi(char *s);
 void _trim(char **str);
+void rm_trailing_space(char *s);
 /** end strings functions*/
 
 /** memory allocation functions */

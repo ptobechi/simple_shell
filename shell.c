@@ -34,6 +34,7 @@ int main(int argc, char **argv, char **envp)
 		if (vread == -1)
 			break;
 
+	/**	rm_trailing_space(lineptr);*/
 		/** handle tokenization and cmd table */
 		_argv =	_create_cmd_table(lineptr, delim);
 
@@ -63,7 +64,7 @@ void exec_shell(char **_argv, char **env, char **lineptr)
 	{
 		if (_argv[1] != NULL)
 			exit_status = _atoi(_argv[1]);
-		free(*lineptr), free_array(_argv), free_array(env);
+		free(*lineptr), free_array(_argv);
 		exit(exit_status);
 	}
 	else if (_strncmp(_argv[0], "env", '\0') == 0)
@@ -83,7 +84,7 @@ void exec_shell(char **_argv, char **env, char **lineptr)
 /**
  * run_cmd - execute cmd
  * @_argv: array of null terminated strings
- * @envp: environment variables
+ * @env: environmental variables
  *
  * Return: void
  */

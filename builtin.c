@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _count_tokens = count number of tokens in a str
+ * _count_tokens - count number of tokens in a str
  * @str: string of null terminated char
  * @delim: delimeter
  *
  * Return: Always (1) Success
  */
-int _count_tokens(char *str,char *delim)
+int _count_tokens(char *str, char *delim)
 {
 	int count = 1;
 
@@ -34,6 +34,9 @@ char **_create_cmd_table(char *tokens, char *delim)
 {
 	char **arr = NULL, *tokens_cpy, *token;
 	int arr_len, i;
+
+	if (tokens == NULL)
+		return (NULL);
 
 	/** count number delim for array alloc*/
 	arr_len = _count_tokens(tokens, delim);
