@@ -37,11 +37,16 @@ This is project is a replica of the bash shell in it simplest form.
 - wait4 (man 2 wait4)
 - write (man 2 write)
 
-## [Features][]
+## [Features](features)
 - 
 - 
 
 ## Installation
 `git clone https://github.com/ptobechi/simple_shell`
+
 `cd simple_shell`
+
 `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
+
+## License
+This project is licensed under the MIT License - see the [LICENSE]() file for details. 
