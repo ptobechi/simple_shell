@@ -49,4 +49,4 @@ This is project is a replica of the bash shell in it simplest form.
 `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE]() file for details. 
+This project is licensed under the MIT License - see the [LICENSE](MIT-LICENCE.txt) file for details. 
