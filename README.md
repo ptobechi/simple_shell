@@ -42,6 +42,6 @@ This is project is a replica of the bash shell in it simplest form.
 - 
 
 ## Installation
-- git clone https://github.com/ptobechi/simple_shell
-- cd simple_shell
-- gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+`git clone https://github.com/ptobechi/simple_shell`
+`cd simple_shell`
+`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
