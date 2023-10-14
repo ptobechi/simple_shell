@@ -37,7 +37,7 @@ This is project is a replica of the bash shell in it simplest form.
 - wait4 (man 2 wait4)
 - write (man 2 write)
 
-## [Features](#features)
+## [Features][]
 - 
 - 
 
