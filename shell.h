@@ -156,3 +156,8 @@ void free_array(char **arr);
 #define _FREE_LINKED_LIST_H
 void _free_linked_list(p_ll *head);
 #endif
+
+#ifndef HANDLE_SIGNAL_H
+#define HANDLE_SIGNAL_H
+void handle_signal(int signum);
+#endif

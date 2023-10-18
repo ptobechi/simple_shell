@@ -19,6 +19,7 @@ int main(int argc, char **argv, char **envp)
 	if (argc > 1)
 		_file_input(argv, envp);
 
+	signal(SIGINT, handle_signal);
 	/**signal(SIGINT, handle_signal);*/
 	while (1)
 	{
@@ -33,7 +34,6 @@ int main(int argc, char **argv, char **envp)
 		if (vread == -1)
 			break;
 
-	/**	rm_trailing_space(lineptr);*/
 		/** handle tokenization and cmd table */
 		_argv =	_create_cmd_table(lineptr, delim);
 
