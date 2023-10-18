@@ -15,10 +15,9 @@ int main(int argc, char **argv, char **envp)
 	ssize_t vread;
 	/** creates an environment table for the shell procees*/
 	char **env = envp;
-	(void)argv;
 
 	if (argc > 1)
-		printf("Execute from file\n");
+		_file_input(argv, envp);
 
 	/**signal(SIGINT, handle_signal);*/
 	while (1)

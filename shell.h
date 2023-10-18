@@ -37,9 +37,19 @@ typedef struct path_list
 } p_ll;
 #endif
 
+#ifndef _ERRORS_
+#define _ERRORS_
+void err_msg(char *dest, char *err, char *arg);
+#endif
+
 #ifndef _EXEC_SHELL_H
 #define _EXEC_SHELL_H
 void exec_shell(char **_argv, char **env, char **lineptr);
+#endif
+
+#ifndef _FILE_INPUT
+#define _FILE_INPUT
+int _file_input(char **argv, char **envp);
 #endif
 
 #ifndef _RUN_CMD_H
