@@ -37,7 +37,6 @@ typedef struct path_list
 } p_ll;
 #endif
 
-/** shell.c functions*/
 #ifndef _EXEC_SHELL_H
 #define _EXEC_SHELL_H
 void exec_shell(char **_argv, char **env, char **lineptr);
@@ -47,9 +46,7 @@ void exec_shell(char **_argv, char **env, char **lineptr);
 #define _RUN_CMD_H
 void run_cmd(char **_argv, char **envp);
 #endif
-/** end shell.c functions*/
 
-/** builtin functions */
 #ifndef _CREATE_CMD_TABLE_H
 #define _CREATE_CMD_TABLE_H
 char **_create_cmd_table(char *str, char *delim);
@@ -64,9 +61,7 @@ int _count_tokens(char *str, char *delim);
 #define _GET_CMD_PATH_H
 char *get_cmd_path(char *cmd, int *flag);
 #endif
-/** end builtin functions */
 
-/** env functions */
 #ifndef _CREATE_ENV_TABLE_H
 #define _CREATE_ENV_TABLE_H
 char **_create_env_table(char **envp);
@@ -91,9 +86,7 @@ void _modify_env(char **argv, char **envp);
 #define _PRINTENV_H
 void _printenv(char **env);
 #endif
-/** end env functions */
 
-/** strings functions */
 #ifndef _STRDUP_H
 #define _STRDUP_H
 char *_strdup(char *str);
@@ -143,9 +136,7 @@ void _trim(char **str);
 #define _RM_TRAILING_SPACE_H
 void rm_trailing_space(char *s);
 #endif
-/** end strings functions*/
 
-/** memory allocation functions */
 #ifndef _FREE_ARRAY_H
 #define _FREE_ARRAY_H
 void free_array(char **arr);
@@ -155,4 +146,3 @@ void free_array(char **arr);
 #define _FREE_LINKED_LIST_H
 void _free_linked_list(p_ll *head);
 #endif
-/**end memory allocation functions */

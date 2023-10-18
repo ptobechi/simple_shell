@@ -121,7 +121,8 @@ int _setenv(char ***env, const char *name, const char *value)
 
 /**
  * _modify_env - creates or updates an environment variable
- * @_argv: array of arguments
+ * @argv: array of arguments
+ * @env: environment variable
  *
  * Return: void
  */

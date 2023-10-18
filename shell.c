@@ -96,17 +96,6 @@ void run_cmd(char **_argv, char **env)
 
 	/** get command location*/
 	cmd_path = get_cmd_path(_argv[0], &handle_flag);
-	/**if (_argv[1] != NULL)
-	  {
-	  _env = _check_for_path(_argv[1], '$');
-
-	  if (_env != NULL)
-	  {
-	  env_path = _getenv(_env);
-	  if (env_path != NULL)
-	  write(STDOUT_FILENO, env_path, _strlen(env_path));
-	  }
-	  }*/
 
 	if (cmd_path == NULL)
 	{

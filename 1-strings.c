@@ -71,7 +71,7 @@ void rm_trailing_space(char *s)
 }
 
 /**
- * remove_newline_char - remove new line char
+ * _rm_newline_char - remove new line char
  * @s: string of null terminated
  *
  * Return: A pointer
